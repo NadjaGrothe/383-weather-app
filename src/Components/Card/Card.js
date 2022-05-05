@@ -1,6 +1,7 @@
-const Card = () => {
-    return (
-        <div className="app">
+const Card = ({ data }) => {
+  console.log("data is", data);
+  return (
+    <div className="app">
       <div className="container">
         <div className="top">
           <div className="location">
@@ -27,8 +28,6 @@ const Card = () => {
       </div>
     </div>
   );
-    
-}
-
+};
 
 export default Card;
