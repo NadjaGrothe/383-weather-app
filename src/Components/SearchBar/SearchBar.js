@@ -1,11 +1,16 @@
-import "./Searchbar.css"
+import "./Searchbar.css";
 
-const SearchBar = () => {
-    return (
-        <div>
-            <input className="searchbar" type="text" placeholder="search..."></input>
-        </div>
-    )
-}
+const SearchBar = ({ handleClick }) => {
+   return (
+      <div>
+         <input
+            className="searchbar"
+            type="text"
+            placeholder="search..."
+            onClick={handleClick}
+         ></input>
+      </div>
+   );
+};
 
 export default SearchBar;
