@@ -1,0 +1,14 @@
+.searchbar {
+display: block;
+justify-content: center;
+width: 50v;
+padding: 15px;
+margin: 0 0 75px;
+appearance: none;
+background: none;
+border: none;
+outline: none;
+background-color: rgba(255,255,255,0.5);
+box-shadow: 5px 5px rgba(39, 35, 35, 0.3);
+border-radius: 40px;
+}
