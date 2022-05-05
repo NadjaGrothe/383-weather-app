@@ -5,7 +5,7 @@ if (key === undefined) {
 }
 
 const keyQuery = `appid=${key}`;
-const server = "http://api.openweathermap.org";
+const server = "https://api.openweathermap.org";
 
 // using geocoding to get lat/lon of location
 export async function getLatLon(searchTerm) {
@@ -34,5 +34,5 @@ export async function getWeatherData(lat, lon) {
 
 // getting png icon of weather condition
 export function getIcon(iconString) {
-  return `http://openweathermap.org/img/wn/${iconString}@2x.png`;
+  return `https://openweathermap.org/img/wn/${iconString}@2x.png`;
 }
