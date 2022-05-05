@@ -31,6 +31,7 @@ function App() {
 
    function handleClick(userInput) {
       setLocationSearch(userInput);
+      // console.log(userInput)
    }
 
    //   function convertUnixTimeToDate () {
@@ -43,8 +44,8 @@ function App() {
 
    return (
       <div>
-         <SearchBar onClick={handleClick} />
-         <Card />
+         <SearchBar handleClick={handleClick} />
+         <Card data={weather}/>
       </div>
    );
 }

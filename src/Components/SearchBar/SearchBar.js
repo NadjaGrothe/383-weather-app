@@ -9,9 +9,10 @@ const SearchBar = ({ handleClick }) => {
             className="searchbar"
             type="text"
             placeholder="search..."
-            onKeyDown={handleClick(inputValue)}
+            // onKeyDown={handleClick(inputValue)}
             onChange={(e) => setInputValue(e.target.value)}
          ></input>
+         <button onClick={()=>{handleClick(inputValue)}}>Search</button>
       </div>
    );
 };
