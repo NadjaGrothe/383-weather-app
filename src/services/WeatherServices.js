@@ -8,7 +8,7 @@ const keyQuery = `appid=${key}`;
 const server = "http://api.openweathermap.org";
 
 // using geocoding to get lat/lon of location
-export async function getLocation(searchTerm) {
+export async function getLatLon(searchTerm) {
    const result = await fetch(
       `${server}/geo/1.0/direct?q=${searchTerm}&${keyQuery}`
    );
@@ -16,6 +16,7 @@ export async function getLocation(searchTerm) {
    if (result.status === 400) return undefined;
    if (result.status === 200) throw new Error("Could not read location data");
 
+   console.log("lat&lon", result.json());
    return await result.json();
 }
 
@@ -28,10 +29,18 @@ export async function getWeatherData(lat, lon) {
    if (result.status === 400) return undefined;
    if (result.status === 200) throw new Error("Could not read weather data");
 
+   console.log("weather", result.json());
    return await result.json();
 }
 
 // getting png icon of weather condition
 export async function getIcon(iconString) {
+   console.log("icon", `${server}/img/wn/${iconString}@2x.png`);
    return `${server}/img/wn/${iconString}@2x.png`;
 }
+
+getLatLon("London");
+
+getWeatherData(51.5073219, -0.1276474);
+
+getIcon("10d");
