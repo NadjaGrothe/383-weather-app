@@ -13,6 +13,7 @@ function App() {
    const [weather, setWeather] = useState({});
 
    useEffect(() => {
+      if (!locationSearch) return;
       async function getGeocode() {
          const geoLoc = await getLatLon(locationSearch);
          setGeoLocation(geoLoc);
@@ -21,6 +22,7 @@ function App() {
    }, [locationSearch]);
 
    useEffect(() => {
+      if (!geoLocation) return;
       async function getWeather() {
          setWeather(await getWeatherData(geoLocation.lat, geoLocation.lon));
       }
