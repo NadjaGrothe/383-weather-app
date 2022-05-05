@@ -7,8 +7,7 @@ const Card = ({ data }) => {
 
    return days.map((day) => {
       const imgUrl = getIcon(day.weather[0].icon);
-      console.log(imgUrl);
-      return (
+            return (
          <div className="app">
             <div className="container">
                <div className="top">
