@@ -1,4 +1,5 @@
-const Card = () => {
+const Card = ({ data }) => {
+  console.log("data is", data);
   return (
     <div className="app">
       <div className="container">
