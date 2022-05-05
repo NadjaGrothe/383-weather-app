@@ -7,10 +7,8 @@ if (key === undefined) {
 const keyQuery = `appid=${key}`;
 const server = "http://api.openweathermap.org";
 
-// /data/2.5/onecall?
-
-// get lat/lon of location
-export async function searchLocation(searchTerm) {
+// using geocoding to get lat/lon of location
+export async function getLocation(searchTerm) {
    const result = await fetch(
       `${server}/geo/1.0/direct?q=${searchTerm}&${keyQuery}`
    );
@@ -19,4 +17,21 @@ export async function searchLocation(searchTerm) {
    if (result.status === 200) throw new Error("Could not read location data");
 
    return await result.json();
+}
+
+// retrieving weather all data for location using lat&lon
+export async function getWeatherData(lat, lon) {
+   const result = await fetch(
+      `${server}data/2.5/onecall?lat=${lat}&lon=${lon}&${keyQuery}`
+   );
+
+   if (result.status === 400) return undefined;
+   if (result.status === 200) throw new Error("Could not read weather data");
+
+   return await result.json();
+}
+
+// getting png icon of weather condition
+export async function getIcon(iconString) {
+   return `${server}/img/wn/${iconString}@2x.png`;
 }
