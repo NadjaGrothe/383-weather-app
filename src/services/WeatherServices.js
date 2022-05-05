@@ -41,8 +41,3 @@ export async function getIcon(iconString) {
    return `http://openweathermap.org/img/wn/${iconString}@2x.png`;
 }
 
-// getLatLon("London");
-
-// getWeatherData(51.5073219, -0.1276474);
-
-// getIcon("10d");
